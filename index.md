@@ -4,6 +4,7 @@
 
 
 [Cleaning messy text dataset and exploratory data analysis](/sample_page)
+
 Cleaning a dataset with multiple problems sush as text typos, different currencies, and multiple categories. EDA with respect to target - anual income.
 <img src="images/EDA Survey.png?raw=true"/>
 [View notebook Cleaning on GitHub](https://github.com/smaileri/course_Bruxelles_Formation/blob/6b4ea15244d7891f04f3682482c7fa65b03e11b2/Messy%20data%20EDA%20and%20Preproccesing/Cleaning_Survey.ipynb)

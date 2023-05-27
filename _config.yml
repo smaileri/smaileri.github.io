@@ -3,13 +3,9 @@ logo: "/images/viktor.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Machine Learning and Data Science Trainee
   <br><br>
-  Following Bruxelles Formation's program "Intelligence Artificielle" (taught in French) and MITx micro-Masters "Statistics and Data Science" (in English)
+  Bruxelles Formation's program "Intelligence Artificielle" (in French)
   <br><br>
-  Strong foundation in Numpy, Pandas, Matplotlib, Seaborn, SciKit-learn, Tensor-Flow
-  <br><br>
-  Curious learner 
-  <br><br>
-  English and French, basic Dutch
+  MITx micro-Masters "Statistics and Data Science" (in English)
   <br><br>
   <a href="www.linkedin.com/in/viktormelnikov">LinkedIn Profile</a> 
 theme: jekyll-theme-minimal

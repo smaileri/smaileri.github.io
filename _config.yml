@@ -1,11 +1,14 @@
 title: Viktor Melnikov # your name (or website title) here
 logo: "/images/viktor.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  Machine Learning and Python Trainee with Bruxelles Formation 
+  Machine Learning and Python Trainee
+  Proficient in Python, ML techniques, and Deep Learning
+  Strong foundation in Pandas, Matplotlib, Seaborn, SciKit-learn, Tensor-Flow Keras
+  Curious and diligent learner 
   <br><br>
   English and French, basic Dutch
   <br><br>
-  <a href="https://www.linkedin.com/in/example/">View My LinkedIn Profile</a> 
+  <a href="www.linkedin.com/in/viktormelnikov">LinkedIn Profile</a> 
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:

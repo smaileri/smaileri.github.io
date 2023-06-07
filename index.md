@@ -8,6 +8,16 @@ Data Visiaulisation|Algorithm Analysis
 :-------------------------:|:-------------------------:
 <img src="images/pca_bodyfat.png?raw=true"/>  | <img src="images/learning_curve_bodyfat.png?raw=true"/>
 
+<p float="left">
+  <img src="images/pca_bodyfat.png?raw=true" width="450" />
+  <img src="images/learning_curve_bodyfat.png?raw=true" width="450" /> 
+</p>
+
+<p align="center">
+  <img alt="Light" src="images/pca_bodyfat.png?raw=true" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="images/learning_curve_bodyfat.png?raw=true" width="45%">
+</p>
 
 [View code on GitHub](https://github.com/smaileri/course_Bruxelles_Formation/blob/54797e4a2c86864404bc000cc08537accfe39923/Regression%20bodyfat/bodyfat_regression.ipynb)
 

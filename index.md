@@ -4,21 +4,7 @@
 ### Ensembles (ADA, XBoost, RForest) and linear models in regression task  
 
 I performed EDA on body fat dataset. I tuned different ML models using pipelinees, cross-validation and grid search. I compared results, engineered new features and justified results.
-Data Visiaulisation|Algorithm Analysis
-:-------------------------:|:-------------------------:
-<img src="images/pca_bodyfat.png?raw=true"/>  | <img src="images/learning_curve_bodyfat.png?raw=true"/>
-
-<p float="left">
-  <img src="images/pca_bodyfat.png?raw=true" width="450" />
-  <img src="images/learning_curve_bodyfat.png?raw=true" width="450" /> 
-</p>
-
-<p align="center">
-  <img alt="Light" src="images/pca_bodyfat.png?raw=true" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="images/learning_curve_bodyfat.png?raw=true" width="45%">
-</p>
-
+<img src="images/bodyfat_pictures.png?raw=true"/>
 [View code on GitHub](https://github.com/smaileri/course_Bruxelles_Formation/blob/54797e4a2c86864404bc000cc08537accfe39923/Regression%20bodyfat/bodyfat_regression.ipynb)
 
 [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)[![](https://img.shields.io/badge/-NumPy-013243?logo=numpy)](#)[![](https://img.shields.io/badge/-seaborn-blue?logo=seaborn )](#)[![](https://img.shields.io/badge/-matplotlib-blue?logo=matplotlib)](#)

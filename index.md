@@ -1,7 +1,17 @@
-## Selected projects
+## Selected projects in Machine Learning and Python
 
 ---
+### Ensembles (ADA, XBoost, RForest) and linear models in regression task  
 
+I performed EDA on body fat dataset. I tuned different ML models using pipelinees, cross-validation and grid search. I compared results, engineered new features and justified results.
+Data Visiaulisation|Algorithm Analysis
+:-------------------------:|:-------------------------:
+<img src="images/pca_bodyfat.png?raw=true"/>  | <img src="images/learning_curve_bodyfat.png?raw=true"/>
+
+
+[View code on GitHub](https://github.com/smaileri/course_Bruxelles_Formation/blob/54797e4a2c86864404bc000cc08537accfe39923/Regression%20bodyfat/bodyfat_regression.ipynb)
+
+[![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)[![](https://img.shields.io/badge/-NumPy-013243?logo=numpy)](#)[![](https://img.shields.io/badge/-seaborn-blue?logo=seaborn )](#)[![](https://img.shields.io/badge/-matplotlib-blue?logo=matplotlib)](#)
 ### Chat-bot for NGO United World Colleges  
 
 Telegram-bot, aimed to communicate with alumni. It supports registration new users and updating their information. It has a functional admin-panel that allows to manage a local database and communicate with users.

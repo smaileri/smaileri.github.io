@@ -1,7 +1,15 @@
-## Selected projects in data science and machine learning
+## Selected projects
 
 ---
 
+### Chat-bot for NGO United World Colleges  
+
+Telegram-bot, aimed to communicate with alumni. It supports registration new users and updating their information. It has a functional admin-panel that allows to manage a local database and communicate with users.
+<img src="images/telegram_bot.png?raw=true"/>
+[View code on GitHub](https://github.com/Projector-python/uwc_team_a.git)
+
+[![](https://img.shields.io/badge/Python-white?logo=Python)](#)[![](https://img.shields.io/badge/-Telegram-white?logo=telegram)](#)[![](https://img.shields.io/badge/-GitHub-9cf?logo=github)](#)[![](https://img.shields.io/badge/-SQLite-9cf?logo=sqlite)](#)
+---
 
 ### Cleaning messy text dataset and exploratory data analysis
 

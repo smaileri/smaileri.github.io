@@ -1,7 +1,7 @@
 ## Selected projects in Machine Learning and Python
 
 ---
-### ScanTestWizzard project  
+### TestScanWizzard project  
 
 Generate a template for your test, then print it and test your students, upload photos of filled templates and automatically check answers. A big and challenging project.
 <img src="images/TestScanWizzard.jpg?raw=true"/>

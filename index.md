@@ -1,6 +1,15 @@
 ## Selected projects in Machine Learning and Python
 
 ---
+### ScanTestWizzard project  
+
+Generate a template for your test, then print it and test your students, upload photos of filled templates and automatically check answers. A big and challenging project.
+<img src="images/TestScanWizzard.png?raw=true"/>
+[View code on GitHub](https://github.com/smaileri/TestScanWizzard)
+
+[![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)[![](https://img.shields.io/badge/-NumPy-013243?logo=numpy)](#)[![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#)
+
+
 ### Ensembles (ADA, XBoost, RForest) and linear models in regression task  
 
 I performed EDA on body fat dataset. I tuned different ML models using pipelinees, cross-validation and grid search. I compared results, engineered new features and justified results.

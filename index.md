@@ -10,7 +10,7 @@ Generate a template for your test, then print it and test your students, upload 
 
 [View code on GitHub](https://github.com/smaileri/TestScanWizzard)
 
-[![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)[![](https://img.shields.io/badge/-NumPy-013243?logo=numpy)](#)[![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#)
+[![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)
 
 
 ### Ensembles (ADA, XBoost, RForest) and linear models in regression task  

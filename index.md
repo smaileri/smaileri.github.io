@@ -4,7 +4,7 @@
 ### ScanTestWizzard project  
 
 Generate a template for your test, then print it and test your students, upload photos of filled templates and automatically check answers. A big and challenging project.
-<img src="images/TestScanWizzard.png?raw=true"/>
+<img src="images/TestScanWizzard.jpg?raw=true"/>
 [View code on GitHub](https://github.com/smaileri/TestScanWizzard)
 
 [![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)[![](https://img.shields.io/badge/-NumPy-013243?logo=numpy)](#)[![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#)

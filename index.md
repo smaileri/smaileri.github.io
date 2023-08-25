@@ -7,6 +7,7 @@ Generate a template for your test, then print it and test your students, upload 
 <img src="images/TestScanWizzard.jpg?raw=true"/>
 
 [View presentation on GoogleSlides ~20mb](https://docs.google.com/presentation/d/1qL-uMWKVZgsxVB4oPqNAuL3r6oYR5Cz7MLb41JGjN5w/edit?usp=sharing)
+
 [View code on GitHub](https://github.com/smaileri/TestScanWizzard)
 
 [![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)[![](https://img.shields.io/badge/-NumPy-013243?logo=numpy)](#)[![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#)

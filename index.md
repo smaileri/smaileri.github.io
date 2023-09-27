@@ -12,6 +12,16 @@ Generate a template for your test, then print it and test your students, upload 
 
 [![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)
 
+### Calculate chairs in a hall project  
+
+Based on a photo it determines how many seats in a cinema hall. In this project I used Roboflow to annotate som existing images, generated my own dataset and use YOLOv7 to locate chairs in form of circles.
+
+<img src="cinema-chairs-photo.jpeg"/>
+
+
+[View code on GitHub]([https://github.com/smaileri/TestScanWizzard](https://github.com/smaileri/pet_projects/tree/main/cinemas-chairs))
+
+[![](https://img.shields.io/badge/-yolov7-000000?logo=yolo)](#) [![](https://img.shields.io/badge/-Roboflow-7210D9)](#) [![](https://img.shields.io/badge/-Google%20Colab-000000?logo=googlecolab)](#)
 
 ### Ensembles (ADA, XBoost, RForest) and linear models in regression task  
 

@@ -14,7 +14,7 @@ Generate a template for your test, then print it and test your students, upload 
 
 ### Calculate chairs in a hall project  
 
-Based on a photo it determines how many seats in a cinema hall. In this project I used Roboflow to annotate som existing images, generated my own dataset and use YOLOv7 to locate chairs in form of circles.
+Based on a photo it determines how many seats in a cinema hall. In this project I used Roboflow to annotate some existing images, generated my own dataset and used YOLOv7 to locate chairs in form of circles.
 
 <img src="images/cinema-chairs-photo.jpeg?raw=true"/>
 
@@ -24,8 +24,9 @@ Based on a photo it determines how many seats in a cinema hall. In this project 
 [![](https://img.shields.io/badge/-yolov7-000000?logo=yolo)](#) [![](https://img.shields.io/badge/-Roboflow-7210D9)](#) [![](https://img.shields.io/badge/-Google%20Colab-000000?logo=googlecolab)](#)
 
 ### Ensembles (ADA, XBoost, RForest) and linear models in regression task  
+The most accurate way to calculate human body fat is to use a bath to determine the volume and density of the human body. I tried to build a system that uses rather simple measurements (like mass, wrist circumference etc) to predict this value.
+I performed EDA on a dataset. I tuned different ML models using pipelines, cross-validation and grid search. I compared results, engineered new features and justified results.
 
-I performed EDA on body fat dataset. I tuned different ML models using pipelinees, cross-validation and grid search. I compared results, engineered new features and justified results.
 <img src="images/bodyfat_pictures.png?raw=true"/>
 [View code on GitHub](https://github.com/smaileri/course_Bruxelles_Formation/blob/54797e4a2c86864404bc000cc08537accfe39923/Regression%20bodyfat/bodyfat_regression.ipynb)
 

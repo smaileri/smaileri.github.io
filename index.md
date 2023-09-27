@@ -19,7 +19,7 @@ Based on a photo it determines how many seats in a cinema hall. In this project 
 <img src="images/cinema-chairs-photo.jpeg?raw=true"/>
 
 
-[View code on GitHub](https://github.com/smaileri/pet_projects/tree/main/cinemas-chairs))
+[View code on GitHub](https://github.com/smaileri/pet_projects/tree/main/cinemas-chairs)
 
 [![](https://img.shields.io/badge/-yolov7-000000?logo=yolo)](#) [![](https://img.shields.io/badge/-Roboflow-7210D9)](#) [![](https://img.shields.io/badge/-Google%20Colab-000000?logo=googlecolab)](#)
 

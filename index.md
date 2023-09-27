@@ -16,7 +16,7 @@ Generate a template for your test, then print it and test your students, upload 
 
 Based on a photo it determines how many seats in a cinema hall. In this project I used Roboflow to annotate som existing images, generated my own dataset and use YOLOv7 to locate chairs in form of circles.
 
-<img src="images/cinema-chairs-photo.jpeg"/>
+<img src="images/cinema-chairs-photo.jpeg?raw=true"/>
 
 
 [View code on GitHub]([https://github.com/smaileri/TestScanWizzard](https://github.com/smaileri/pet_projects/tree/main/cinemas-chairs))

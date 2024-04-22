@@ -1,6 +1,13 @@
 ## Selected projects in Machine Learning and Python
 
 ---
+
+### PowerBi report
+
+Report based on AdventureWorks dataset. Data modeling, custom tooltips, drilltrhough, navigation, slicers and many others.
+
+<iframe title="project" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjNiMzM5ZTEtMTFiZi00Y2M3LWIxZTYtNTliNDg2N2Y5NDY3IiwidCI6IjlmNDI2NGNjLTVhNDYtNDFkMy1iODZiLTM0MTQ5YzgwNDc3ZSIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+
 ### TestScanWizzard project  
 
 Generate a template for your test, then print it and test your students, upload photos of filled templates and automatically check answers. A big and challenging project.

@@ -19,6 +19,10 @@ Generate a template for your test, then print it and test your students, upload 
 
 [![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)
 
+### Technologies Network Graph
+Network graph with all tehnologies that Dattico uses.
+<iframe title="Graph with technologies" width="600" height="373.5" src="./ExpandableGraphSergio.html" frameborder="0" allowFullScreen="true"></iframe>
+
 ### Calculate chairs in a hall project  
 
 Based on a photo it determines how many seats in a cinema hall. In this project I used Roboflow to annotate some existing images, generated my own dataset and used YOLOv7 to locate chairs in form of circles.
@@ -30,7 +34,7 @@ Based on a photo it determines how many seats in a cinema hall. In this project 
 
 [![](https://img.shields.io/badge/-yolov7-000000?logo=yolo)](#) [![](https://img.shields.io/badge/-Roboflow-7210D9)](#) [![](https://img.shields.io/badge/-Google%20Colab-000000?logo=googlecolab)](#)
 
-### Ensembles (ADA, XBoost, RForest) and linear models in regression task  
+### Explatorary Data Analysis with ensembles (ADA, XBoost, RForest) and linear models in regression task  
 The most accurate way to calculate human body fat is to use a bath to determine the volume and density of the human body. I tried to build a system that uses rather simple measurements (like mass, wrist circumference etc) to predict this value.
 I performed EDA on a dataset. I tuned different ML models using pipelines, cross-validation and grid search. I compared results, engineered new features and justified results.
 

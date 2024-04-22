@@ -19,8 +19,8 @@ Generate a template for your test, then print it and test your students, upload 
 
 [![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv )](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)
 
-### Technologies Network Graph
-Network graph with all tehnologies that Dattico uses.
+### Technologies Network Graph (vis.js)
+Interactive Network graph with all tehnologies that Dattico uses.
 <iframe title="Graph with technologies" width="600" height="373.5" src="./ExpandableGraphSergio.html" frameborder="0" allowFullScreen="true"></iframe>
 
 ### Calculate chairs in a hall project  

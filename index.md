@@ -27,8 +27,6 @@ Used scrapping (Python, Beatiful Soupe) for creating dataset, React JS for build
 
 [Go to website (desktop only)](https://www.conjugate-french.link/)
 
-[![](https://img.shields.io/badge/-TensorFlow-white?logo=tensorflow)](#) [![](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv)](#) [![](https://img.shields.io/badge/-scikit%20learn-white?logo=scikitlearn)](#)
-
 ### Technologies Network Graph (vis.js)
 
 Interactive Network graph with all tehnologies that Dattico uses.

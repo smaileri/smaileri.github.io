@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expandable Graph</title>
+    <style type="text/css">
+      #mynetwork {
+        width: 100%; 
+        height: 100vh; 
+        /* border: 1px solid lightgray; */
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="tooltips.css" />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis@latest/dist/vis.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+      const colors = {
+        data: "#662d91",
+        ai: "#a7a9ac",
+        analysis: "#201345"
+      }
+      var nodes = new vis.DataSet([
+        { id: 1, label: "Data Strategy", title:"The foundation for managing your company's information. This involves outlining your goals for data, determining what data you need, and establishing best practices for data governance, quality, and security.",color: "#F7F7FF", fixed: true, image:''},
+// 1st level
+        {id: 11,label: "Data management", title: "Solutions for storing, processing, and securing your data, leveraging cloud providers like AWS and Azure. This encompasses data warehouses, data lakes, data security, and data governance to ensure data integrity.", color: colors.data,fixed: true,parent: 1, image: ''},
+        {id: 12,label: "Artificial Intelligence", title: "Leverage managed AI services and develop custom models for advanced decision-making, prediction, and automation. Utilize AI for tasks like image and video analysis, language understanding, and generating creative content.", color: colors.ai,fixed: true,parent: 1, image: ''},
+        {id: 13,label: "Analytics", title: "Employ tools and techniques to extract meaningful insights from your data to drive better business decisions. This includes reporting, dashboards, statistical analysis, and forecasting.", color: colors.analysis,fixed: true,parent: 1,image: ''},
+// 2nd level AI
+        { id: 121, label: "AI workloads", title: "Platforms and tools specifically designed for running and managing machine learning models. These platforms provide the necessary infrastructure and software for model training, deployment, and scaling.", color: colors.ai, fixed: true, parent: 12,  image: './icons/noun-artificial-intelligence-2985130-FFFFFF.svg' },
+        { id: 122, label: "Natural Language Proccesing", title: "Help computers understand, interpret, and generate human language. Applications include chatbots, machine translation, content creation, and text analysis for insights.",color: colors.ai, fixed: true, parent: 12,  image: './icons/noun-natural-language-processing-2985136-FFFFFF.svg'},
+        { id: 123, label: "Computer Vision",  title: "Enable machines to \"see\" and interpret images and videos. Applications include facial recognition, object detection, image classification, and autonomous systems (e.g., self-driving cars).",color: colors.ai, fixed: true, parent: 12,  image: './icons/noun-computer-vision-2985143-FFFFFF.svg'},
+//2nd level Data Management
+        { id: 111, label: "Cloud Storage ecosystem", title:"Explore various cloud-based data storage solutions in AWS and Azure. These services offer scalability, flexibility, and cost efficiency for storing different types of data.", color: colors.data, fixed: true, parent: 11,  image: './icons/storage-icon.png'},
+        { id: 112, label: "Data Pipelines", title:"Automate the movement and transformation of data from various sources to your analytics platforms. Tools in this area streamline your data flow and prepare your data for analysis.", color: colors.data, fixed: true, parent: 11,  image: './icons/noun-machine-learning-2985131-FFFFFF.svg'},
+        { id: 113, label: "Data Interface", title:"Technologies that enable user interaction with your data systems. This includes building APIs to access data, developing applications, and creating dashboards or visualizations.",color: colors.data, fixed: true, parent: 11,  image: './icons/noun-dataset-2985133-FFFFFF.svg'},
+
+// 2nd level Analytics
+        {id: 131,label: "Business Intelligence", title:"Utilize tools and platforms to visualize and analyze data for strategic decision-making. Build dashboards, reports, and interactive visualizations to track key business metrics.", color: colors.analysis,fixed: true,parent: 13, image: './icons/noun-deep-learning-2985132-FFFFFF.svg'},
+        {id: 132,label: "Data Visualisation", title:"Present data in clear and compelling ways using charts, graphs, infographics, and maps. Effective visualization helps you and others understand patterns, trends, and relationships within your data.", color: colors.analysis,fixed: true,parent: 13, image: './icons/business-graph-data-svgrepo-com.svg'},
+        {id: 133, label: "VR/AR development", title:"Build immersive analytics experiences with technologies like Hololens. Explore data in engaging ways using virtual and augmented reality, bringing a new dimension to analysis and visualization.", color: colors.analysis,fixed: true,parent: 13, image: './icons/vr-glasses-goggles-headset-user-svgrepo-com.svg'},
+
+// 3rd level Data Management (Cloud Storage ecosystem)
+        {id: 1111, label: "S3", title:"Amazon Simple Storage Service (S3) is a highly scalable object storage service. Use it to store and retrieve any amount of data, from files and images to backups and entire applications.", hidden:false, color: colors.data, parent: 111, image:"./icons/amazon-s3-simple-storage-service.svg"},
+        {id: 1112, label: "Blob", title:"Azure Blob Storage is Microsoft's object storage solution, optimized for storing massive amounts of unstructured data like images, videos, and documents.",  hidden:false,color: colors.data, parent: 111, image:"./icons/azure-blob.png"},
+        {id: 1113, label: "Databases", title:"Explore a variety of database types for structured, unstructured, and semi-structured data. Choose the right database technology based on your data characteristics and application requirements.        ",  hidden:false,color: colors.data, parent: 111, image:""},
+
+// 3rd level Data Management (Data Pipelines)
+        {id: 1121, label: "Data Factory", title:" A cloud-based data integration service that allows you to orchestrate and automate the movement and transformation of data. It provides a visual interface for building complex data pipelines.", hidden:false, color: colors.data, parent: 112, image:"./icons/datafactory.jpg"},
+        {id: 1122, label: "Glue",  title: "A managed ETL (Extract, Transform, Load) service on AWS. Build and manage data pipelines that prepare data for analytics, using both visual and code-based interfaces.",hidden:false,color: colors.data, parent: 112, image:"icons/glue.jpeg"},
+        {id: 1123, label: "Lambda", title:"Utilize serverless computing on AWS and Azure to run code without managing servers. Ideal for tasks within your data pipelines that require custom logic or transformations.", hidden:false, color: colors.data, parent: 112, image:"icons/lambda.png"},
+
+// 3rd level Data Management (Data Interface)
+        {id: 1131, label: "API Gateway", title:"An AWS service for creating, managing, and securing APIs at scale. Build robust APIs that allow applications to interact with your data and services in a controlled manner.",hidden:false, color: colors.data, parent: 113, image:"icons/api gateway.png"},
+        {id: 1132, label: "AppSync", title:"Build scalable GraphQL APIs to access data from multiple sources. GraphQL provides flexibility and efficiency when querying and combining data for your applications.", hidden:false,color: colors.data, parent: 113, image:"icons/appsync.svg"},
+
+// 3rd level AI (AI workloads)
+        {id: 1211, label: "Sagemaker", title:"Amazon's comprehensive machine learning platform. Build, train, and deploy models more easily, with tools for all stages of the machine learning workflow.",  hidden:false,color: colors.ai, parent: 121, image:"icons/sagemaker.jpg"},
+        {id: 1212, label: "Azure ML", title:"Microsoft's suite of tools and services for building and managing machine learning models in the cloud. Offers a range of features, including model development, experimentation, and deployment options.",  hidden:false,color: colors.ai, parent: 121, image:"icons/azureML.png"},
+
+// 3rd level AI (Natural Language Proccesing)
+        {id: 1221, label: "AWS Bedrock", title:"Provides a foundation for building and scaling generative AI applications with foundation models on AWS. Utilize this service for advanced language generation, summarization, and translation tasks.", hidden:false,color: colors.ai, parent: 122, image:"https://imgs.search.brave.com/dGTwEUFlBtF8T2bLArtuj89MsdwWqihDrCRvAXi5tVg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/b3V0c3lzdGVtcy5j/b20vRm9yZ2VfQ1cv/X2ltYWdlLmFzcHgv/UThMdlktLTZXYWtP/dzlhZkRDdXVHYlE5/dS1RS2JpcWlFYUcx/RkRNaUtWbz0vYXdz/LWJlZHJvY2stcnVu/dGltZS0yMDIzLTAx/LTA0JTIwMDAtMDAt/MDAtMjAyNC0wMy0x/OSUyMDAzLTUxLTIy"},
+        {id: 1222, label: "LLMs", title:"Powerful language models (like GPT-3 and others) capable of advanced text generation, translation, and understanding. Use LLMs through APIs or by fine-tuning them for specific tasks.",hidden:false,color: colors.ai, parent: 122, image:"icons/llm.png"},
+
+// 3rd level AI (Computer Vision)
+        {id: 1231, label: "Rekognition", title:"AWS Rekognition is a powerful tool for analyzing images and videos. It can identify objects, people, and scenes. It can even read text and recognize faces for security or personalized experiences.",  hidden:false,color: colors.ai, parent: 123, image:"icons/ai-amazonrekognition-icon-1696x2048-77s6olqh.png"},
+        {id: 1232, label: "opencv", title:"OpenCV is a go-to library for computer vision tasks. It can process images and video in real-time. OpenCV helps perform tasks like object detection, motion tracking, 3D reconstruction, and image enhancement. Developers use it for a wide range of projects, from robotics to augmented reality.", hidden:false,color: colors.ai, parent: 123, image:"icons/opencv.png"},
+        {id: 1233, label: "TensorFlow",  title:"TensorFlow is a popular and flexible machine learning framework. It has strong capabilities for computer vision tasks. Developers use TensorFlow to build and train image recognition models, implement object detection systems, and even create image-generation applications.",hidden:false,color: colors.ai, parent: 123, image:"icons/tensorflow.png"},
+
+// 3rd level Analytics (Business Intelligence)
+        {id: 1311, label: "Spotfire", title:"Spotfire is a powerful data visualization and analytics tool. It enables you to explore complex datasets through interactive charts, graphs, and maps. Spotfire helps you uncover patterns, trends, and outliers that might be difficult to see in raw data, making it valuable for business insights and decision-making.",  hidden:false,color: colors.analysis, parent: 131, image:"./icons/spotfire.webp"},
+        {id: 1312, label: "PowerBi", title:"Power BI is Microsoft's business intelligence tool. It lets you create interactive reports and dashboards. Power BI connects to various data sources and makes it easy to visualize your data, helping businesses discover hidden insights and make informed decisions.", hidden:false,color: colors.analysis, parent: 131, image:"https://imgs.search.brave.com/CUrVpqx0V2YsMSs6v0MzGOFEK0n1o3ko_gIRY7Vrvp0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9jL2NmL05l/d19Qb3dlcl9CSV9M/b2dvLnN2Zy8yMjBw/eC1OZXdfUG93ZXJf/QklfTG9nby5zdmcu/cG5n"},
+
+// 3rd level Analytics (Data Visualisation)
+        {id: 1321, label: "Web graphs", title:"Web-based visualizations let you create customizable data displays directly within websites or web applications. These visualizations help make data more engaging and interactive. They're often used for real-time data dashboards, dynamic infographics, and business performance monitoring",  hidden:false,color: colors.analysis, parent: 132, image:""},
+        {id: 1322, label: "Python viz tecnhiques", title:"Python offers several libraries for creating diverse data visualizations. Matplotlib and Seaborn are popular choices. They let you create static or interactive visualisations. Python visualization techniques are used for exploring data trends, presenting results, and communicating insights.", hidden:false,color: colors.analysis, parent: 132, image:""},
+
+// 3rd level Analytics (VR/AR development)
+        {id: 1331, label: "Hololens", title:"Microsoft Hololens is an augmented reality headset. It blends digital objects with the real world. Hololens can display data visualizations in immersive 3D environments. This is valuable for industries like engineering, healthcare, and education.",  hidden:false,color: colors.analysis, parent: 133, image:"icons/hololens.png"},
+
+//4th level Analytics (Web graphs)
+        {id: 13211, label: "Vis.js", title:"Vis.js is a JavaScript library for creating interactive visualizations in web browsers. It excels at network graphs and timelines. Vis.js is flexible and allows for custom styling. It’s ideal for projects displaying complex relationships or data over time.",  hidden:false,color: colors.analysis, parent: 1321, image:"./icons/visjs-logo.png"},
+        {id: 13212, label: "Nivo", title:"Nivo is a React-based data visualization library built on top of D3. It makes creating beautiful and informative charts easy. Nivo provides a range of chart components that are highly customizable, offering developers a convenient way to build data dashboards and visualizations for web apps.",  hidden:false,color: colors.analysis, parent: 1321, image:"./icons/nivo-logo.png"},
+//4th level Analytics (Python viz tecnhiques)
+        {id: 13221, label: "Matplotlib", title:"Matplotlib is the cornerstone of visualization in Python. It offers extensive control over every aspect of your plots. Matplotlib is highly versatile, allowing you to create everything from basic statistical charts to complex custom visualizations.",  hidden:false,color: colors.analysis, parent: 1322, image:"./icons/matplotlib-logo.svg"},
+        {id: 13222, label: "Seaborn", title:"Seaborn is a Python library built on top of Matplotlib. It specializes in creating visually appealing statistical graphics. Seaborn offers a high-level interface, making it easy to generate informative and beautiful visualizations of your data.",  hidden:false,color: colors.analysis, parent: 1322, image:"./icons/seaborn-logo.png"},
+        {id: 13223, label: "Pandas", title:"Pandas is a powerful Python library for data analysis and manipulation. While not solely a visualization tool, its plotting capabilities are excellent for quickly exploring datasets. Pandas visualizations help users gain insights into their data during the exploration process.",  hidden:false,color: colors.analysis, parent: 1322, image:"./icons/pandas-logo.png"},
+
+
+//4th level AI (LLMs)
+        {id: 12221, label: "OpenAI API", title:"The OpenAI API gives you access to cutting-edge language models. These models understand and generate human-like text. They can be used for tasks like translation, summarization, writing different kinds of creative text formats, and answering your questions in an informative way.", hidden:false,color: colors.ai, parent: 1222, image:"icons/logo-open-ai.png"},
+        {id: 12222, label: "HuggingFace",title:"Hugging Face is a platform for accessing and working with a wide variety of pre-trained language models. It offers a central hub for developers and researchers. Hugging Face makes sharing and using language models easy, fostering collaboration and innovation.", hidden:false,color: colors.ai, parent: 1222, image:"icons/huggingface_logo-noborder.svg"},
+//4th level Data (Databases)
+        {id: 11131, label: "SQL", title:"SQL databases are designed to store structured data in tables with rows and columns. This format is ideal for data that has clear relationships and predefined categories. SQL is a powerful language used to query and manipulate data within these databases.",  hidden:false,color: colors.data, parent: 1113, image:""},
+        {id: 11132, label: "NoSQL etc", title:"NoSQL databases provide flexible ways to store and manage data that doesn't fit neatly into the row-and-column structure. These databases are great for handling large volumes of unstructured data, semi-structured data, or data with complex relationships that change over time. They offer scalability and adaptability.",  hidden:false,color: colors.data, parent: 1113, image:""},
+
+//5th level Data (SQL)
+
+        {id: 111311, label: "RDS", title:"Amazon RDS is a managed service that makes it easy to set up, operate, and scale relational databases on AWS. It handles routine database tasks like backups, patching, and scaling. RDS supports popular database engines like MySQL, PostgreSQL, and MariaDB.",  hidden:false,color: colors.data, parent: 11131, image:"./icons/rds-logo.png"},
+        {id: 111312, label: "SQL databases", title:"Azure SQL is Microsoft's cloud-based offering for managed relational databases. It provides various deployment options and database engines. Azure SQL automates administrative tasks and offers built-in intelligence for performance optimization.",  hidden:false,color: colors.data, parent: 11131, image:"./icons/azure-sql-logo.jpg"},
+//5th level Data (NoSQL)    
+        {id: 111321, label: "DynamoDB", title:"AWS DynamoDB is a fully managed key-value database known for its speed and scalability. It can handle huge volumes of read and write requests with consistently low latency. DynamoDB is often used for applications that demand high performance, like mobile apps, games, and real-time analytics.",  hidden:false,color: colors.data, parent: 11132, image:"./icons/dynamodb-logo.jpg"},
+        {id: 111322, label: "Neptune", title:"AWS Neptune is a graph database designed for storing and querying highly interconnected data. It models data as a network of nodes and relationships. Neptune is ideal for use cases like recommendation engines, fraud detection, and social network analysis.",  hidden:false,color: colors.data, parent: 11132, image:"./icons/neptune-logo.png"},
+        {id: 111323, label: "CosmoDB", title:"Azure Cosmos DB is a globally distributed, multi-model database service. It supports various data models, including key-value, graph, and document. Cosmos DB offers high availability, automatic scaling, and low latency, making it suitable for a wide range of applications.",  hidden:false,color: colors.data, parent: 11132, image:"./icons/cosmodb-logo.jpg"},
+        {id: 111324, label: "MongoDB", title:"MongoDB is a popular document-oriented NoSQL database. It stores data in flexible JSON-like documents. MongoDB is known for its ease of use, scalability, and suitability for applications with dynamic schemas and rapidly changing data.",  hidden:false,color: colors.data, parent: 11132, image:"./icons/mongodb-logo.png"},      
+      ]);
+
+      var edges = new vis.DataSet([
+        { from: 1, to: 11 },
+        { from: 1, to: 12 },
+        { from: 1, to: 13 },
+
+        { from: 11, to: 111 },
+        { from: 11, to: 112 },
+        { from: 11, to: 113 },
+        { from: 11, to: 114 },
+
+        { from: 12, to: 121 },
+        { from: 12, to: 122 },
+        { from: 12, to: 123 },
+        { from: 12, to: 124 },
+
+        { from: 13, to: 131 },
+        { from: 13, to: 132 },
+        { from: 13, to: 133 },
+        { from: 13, to: 134 },
+
+
+        {from: 111, to: 1111},
+        {from: 111, to: 1112},
+        {from: 111, to: 1113},
+
+        {from: 112, to: 1121},
+        {from: 112, to: 1122},
+        {from: 112, to: 1123},
+
+        {from: 113, to: 1131},
+        {from: 113, to: 1132},
+
+        {from: 121, to: 1211},
+        {from: 121, to: 1212},
+
+        {from: 122, to: 1221},
+        {from: 122, to: 1222},
+
+        {from: 123, to: 1231},
+        {from: 123, to: 1232},
+        {from: 123, to: 1233},
+ 
+        {from: 131, to: 1311},
+        {from: 131, to: 1312},
+
+        {from: 132, to: 1321},
+        {from: 132, to: 1322},
+
+        {from: 133, to: 1331},
+
+        {from: 1222, to: 12221},
+        {from: 1222, to: 12222},
+
+        {from: 1113, to: 11131},
+        {from: 1113, to: 11132},
+
+        {from: 11131, to: 111311},
+        {from: 11131, to: 111312},
+
+        {from: 11132, to: 111321},
+        {from: 11132, to: 111322},
+        {from: 11132, to: 111323},
+        {from: 11132, to: 111324},
+
+
+        {from: 1321, to: 13211},
+        {from: 1321, to: 13212},
+
+        {from: 1322, to: 13221},
+        {from: 1322, to: 13222},
+        {from: 1322, to: 13223},
+
+      ]);
+
+      // configure network behavior
+      var container = document.getElementById("mynetwork");
+      var data = {
+        nodes: nodes,
+        edges: edges,
+      };
+      var options = {
+        interaction: {
+          dragNodes: false,
+          dragView: false,
+          zoomView: true,
+          selectable: true,
+          hover:true
+        },
+        nodes: {
+          size: 70,
+          shape: 'circularImage',
+          borderWidth: 2,
+          font: {
+            size:  23,
+            color: '#000000'
+          }
+        },
+        layout: {
+          hierarchical: {
+            direction: 'UD',
+            sortMethod: 'directed',
+            nodeSpacing: 200,
+            levelSeparation: 250,
+            },
+        },
+        physics: {
+          enabled: false,
+          stabilization: true,
+        },
+      };
+
+      // create network
+      var network = new vis.Network(container, data, options);
+
+      const findAllChildren = (parentId, hiddenStatus) => {
+        // console.log("search from parentId", parentId)
+        const children = nodes.get({
+          filter: function (item) {
+            return item.hidden !== hiddenStatus && item.parent === parentId;
+          },
+        });
+        // console.log("children inside findAllChildren", children);
+
+        if (children.length > 0) {
+          let answer = [];
+          for (let i = 0; i < children.length; i++) {
+            // console.log("children[i].id", children[i].id)
+            answer = answer.concat(
+              findAllChildren(children[i].id, hiddenStatus)
+            );
+          }
+          return children.concat(answer);
+        } else {
+          return [];
+        }
+      };
+      
+      // handle node click for expansion
+      network.on("click", function (properties) {
+        if (properties.nodes.length > 0) {
+          var clickedNodeId = properties.nodes[0];
+
+          var hiddenChildren = findAllChildren(clickedNodeId, false);
+
+          if (hiddenChildren.length > 0) {
+            // show hidden children
+            for (var i = 0; i < hiddenChildren.length; i++) {
+              hiddenChildren[i].hidden = false;
+            }
+            nodes.update(hiddenChildren);
+          } else {
+            var visibleChildren = findAllChildren(clickedNodeId, true);
+            console.log("visibleChildren", visibleChildren);
+            if (visibleChildren.length > 0) {
+              for (var i = 0; i < visibleChildren.length; i++) {
+                visibleChildren[i].hidden = true;
+              }
+              nodes.update(visibleChildren);
+            }
+          }
+
+          // refresh the network with updated data
+          nodes.forEach(function (node) {
+            nodes.update(node);
+          });
+        }
+      });
+      network.on("hoverNode", function (properties) {
+        if (properties.node) {
+          var nodeId = properties.node;
+          var node = nodes.get(nodeId);
+          if (node.title) {
+            network.canvas.body.container.title = node.title;
+          }
+        }
+      });
+      network.on("blurNode", function (properties) {
+        if (properties.node) {
+          var nodeId = properties.node;
+          var node = nodes.get(nodeId);
+          if (node.title) {
+            network.canvas.body.container.title = "";
+          }
+        }
+      });
+
+      
+
+    </script>
+
+  </body>
+</html>

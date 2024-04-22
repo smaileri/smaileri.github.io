@@ -1,0 +1,49 @@
+2024-04-10T10:34:13.095Z [INFO]: # Cloning repository: git@github.com:Dattico/campaignster-project.git
+2024-04-10T10:34:19.655Z [INFO]: 
+2024-04-10T10:34:19.738Z [INFO]: Cloning into 'campaignster-project'...
+                                 Updating files:  35% (15795/44433)Updating files:  36% (15996/44433)Updating files:  37% (16441/44433)Updating files:  38% (16885/44433)Updating files:  39% (17329/44433)Updating files:  40% (17774/44433)Updating files:  41% (18218/44433)Updating files:  42% (18662/44433)Updating files:  43% (19107/44433)Updating files:  44% (19551/44433)Updating files:  45% (19995/44433)Updating files:  46% (20440/44433)Updating files:  47% (20884/44433)Updating files:  48% (21328/44433)Updating files:  49% (21773/44433)Updating files:  50% (22217/44433)Updating files:  51% (22661/44433)Updating files:  52% (23106/44433)Updating files:  53% (23550/44433)Updating files:  54% (23994/44433)Updating files:  55% (24439/44433)Updating files:  56% (24883/44433)Updating files:  57% (25327/44433)Updating files:  58% (25772/44433)Updating files:  59% (26216/44433)Updating files:  60% (26660/44433)Updating files:  61% (27105/44433)Updating files:  62% (27549/44433)Updating files:  63% (27993/44433)Updating files:  64% (28438/44433)Updating files:  65% (28882/44433)Updating files:  66% (29326/44433)Updating files:  67% (29771/44433)Updating files:  68% (30215/44433)Updating files:  69% (30659/44433)Updating files:  69% (30913/44433)Updating files:  70% (31104/44433)Updating files:  71% (31548/44433)Updating files:  72% (31992/44433)Updating files:  73% (32437/44433)Updating files:  74% (32881/44433)Updating files:  75% (33325/44433)Updating files:  76% (33770/44433)Updating files:  77% (34214/44433)Updating files:  78% (34658/44433)Updating files:  79% (35103/44433)Updating files:  80% (35547/44433)Updating files:  81% (35991/44433)Updating files:  82% (36436/44433)Updating files:  83% (36880/44433)Updating files:  84% (37324/44433)Updating files:  85% (37769/44433)Updating files:  86% (38213/44433)Updating files:  87% (38657/44433)Updating files:  88% (39102/44433)Updating files:  89% (39546/44433)Updating files:  90% (39990/44433)Updating files:  91% (40435/44433)Updating files:  92% (40879/44433)Updating files:  93% (41323/44433)Updating files:  94% (41768/44433)Updating files:  95% (42212/44433)Updating files:  96% (42656/44433)Updating files:  97% (43101/44433)Updating files:  98% (43545/44433)Updating files:  99% (43989/44433)Updating files: 100% (44433/44433)Updating files: 100% (44433/44433), done.
+2024-04-10T10:34:19.738Z [INFO]: # Checking for Git submodules at: /codebuild/output/src3480986073/src/campaignster-project/.gitmodules
+2024-04-10T10:34:19.745Z [INFO]: # Retrieving environment cache...
+2024-04-10T10:34:19.784Z [WARNING]: ! Unable to write cache: {"code":"ERR_BAD_REQUEST","message":"Request failed with status code 404"})}
+2024-04-10T10:34:19.784Z [INFO]: ---- Setting Up SSM Secrets ----
+2024-04-10T10:34:19.784Z [INFO]: SSM params {"Path":"/amplify/d1dk6r03au60ru/dev-env/","WithDecryption":true}
+2024-04-10T10:34:19.824Z [WARNING]: !Failed to set up process.env.secrets
+2024-04-10T10:34:20.715Z [INFO]: No live updates for this build run
+2024-04-10T10:34:20.718Z [INFO]: # Retrieving cache...
+2024-04-10T10:34:20.761Z [INFO]: # Retrieved cache
+2024-04-10T10:34:24.823Z [INFO]: ## Starting Backend Build
+                                 ## Checking for associated backend environment...
+                                 ## No backend environment association found, continuing...
+2024-04-10T10:34:24.828Z [INFO]: ## Completed Backend Build
+                                 {"backendDuration": 0}
+                                 ## Starting Frontend Build
+                                 # Starting phase: preBuild
+                                 # Executing command: npm ci --cache .npm --prefer-offline
+2024-04-10T10:34:50.785Z [INFO]: added 654 packages, and audited 655 packages in 17s
+2024-04-10T10:34:50.794Z [INFO]: 122 packages are looking for funding
+                                 run `npm fund` for details
+                                 1 moderate severity vulnerability
+                                 To address all issues, run:
+                                 npm audit fix
+                                 Run `npm audit` for details.
+2024-04-10T10:34:50.807Z [INFO]: # Completed phase: preBuild
+                                 # Starting phase: build
+                                 # Executing command: npm run build
+2024-04-10T10:34:51.190Z [INFO]: > projectamplifyv2@0.0.0 build
+                                 > vite build
+2024-04-10T10:34:52.037Z [INFO]: vite v5.1.6 building for production...
+2024-04-10T10:34:52.085Z [INFO]: transforming...
+2024-04-10T10:34:52.171Z [INFO]: ✓ 15 modules transformed.
+2024-04-10T10:34:52.172Z [WARNING]: x Build failed in 112ms
+2024-04-10T10:34:52.174Z [WARNING]: error during build:
+                                    RollupError: Could not resolve "./aws-exports" from "src/main.jsx"
+                                    file: /codebuild/output/src3480986073/src/campaignster-project/src/main.jsx
+                                    at getRollupError (file:///codebuild/output/src3480986073/src/campaignster-project/node_modules/rollup/dist/es/shared/parseAst.js:375:41)
+                                    at error (file:///codebuild/output/src3480986073/src/campaignster-project/node_modules/rollup/dist/es/shared/parseAst.js:372:42)
+                                    at ModuleLoader.handleInvalidResolvedId (file:///codebuild/output/src3480986073/src/campaignster-project/node_modules/rollup/dist/es/shared/node-entry.js:18899:24)
+                                    at file:///codebuild/output/src3480986073/src/campaignster-project/node_modules/rollup/dist/es/shared/node-entry.js:18859:26
+2024-04-10T10:34:52.188Z [ERROR]: !!! Build failed
+2024-04-10T10:34:52.188Z [ERROR]: !!! Error: Command failed with exit code 1
+2024-04-10T10:34:52.188Z [INFO]: # Starting environment caching...
+2024-04-10T10:34:52.188Z [INFO]: # Environment caching completed
+Terminating logging...

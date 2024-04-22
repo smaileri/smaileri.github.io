@@ -1,4 +1,4 @@
-## Selected projects in Machine Learning and Python
+## Selected projects in Data Science
 
 ---
 

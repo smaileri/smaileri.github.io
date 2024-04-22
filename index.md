@@ -2,7 +2,7 @@
 
 ---
 
-### PowerBi report
+### Power BI report
 
 Report based on AdventureWorks dataset. Data modeling, custom tooltips, drilltrhough, navigation, slicers and many others.
 
